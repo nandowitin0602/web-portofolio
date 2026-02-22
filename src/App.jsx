@@ -1,15 +1,18 @@
+import { useContext } from "react";
 import DataImage from "./data";
 import { listTools, listProyek } from "./data"
+import { DarkModeContext } from "./context/DarkModeContext";
 
 function App() {
+  const { dark } = useContext(DarkModeContext);
 
   return (
     <>
       {/* Hero */}
       <div className="hero grid md:grid-cols-2 pt-10 items-center xl:gap-0 gap-6 grid-cols-1 md:h-[75vh] h-auto">
         <div className="flex flex-col md:items-start items-center animate__animated animate__fadeInUp animate__delay-3s">
-          <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
-            <img src={DataImage.HeroImage} alt="Hero Image" className="w-10 rounded-md bg-orange-600/50" loading="lazy"
+          <div className={`flex items-center gap-3 mb-6 ${dark ? "bg-zinc-800" : "bg-zinc-300"} w-fit p-4 rounded-2xl transition-all duration-300 ease-in-out`}>
+            <img src={DataImage.HeroImage} alt="Hero Image" className="w-10 rounded-md" loading="lazy"
               style={{
                 background: "linear-gradient(to top, rgba(234, 88, 12, 1) 20%, rgba(234, 88, 12, 0) 100%)",
               }} />
@@ -21,13 +24,13 @@ function App() {
           </h1>
           <p className="text-base/loose mb-6 opacity-50">Membangun sistem yang efisien, aman, dan mudah digunakan, serta menyederhanakan proses kompleks melalui kode yang rapi dan handal.</p>
           <div className="flex items-center sm:gap-4 gap-2">
-            <a href="#" className="bg-orange-600 p-4 rounded-2xl hover:font-bold border-2 border-orange-600 
+            <a href="#" className="bg-orange-600 p-4 rounded-2xl hover:font-bold border-2 border-orange-600 text-zinc-50
             transition-all duration-300 ease-in-out hover:scale-105 hover:bg-orange-50 hover:text-orange-600">Download CV <i className="ri-file-download-line ri-lg"></i></a>
-            <a href="#proyek" className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600
+            <a href="#proyek" className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600 text-zinc-50
             border-2 border-zinc-700 transition-all duration-300 ease-in-out">Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i></a>
           </div>
         </div>
-        <img src={DataImage.HeroImage} alt="Hero Image" className="w-[500px] rounded-4xl md:ml-auto md:mr-0 mx-auto
+        <img src={DataImage.HeroImage} alt="Hero Image" className="w-125 rounded-4xl md:ml-auto md:mr-0 mx-auto
             animate__animated animate__fadeInUp animate__delay-4s" loading="lazy"
           style={{
             background: "linear-gradient(to top, rgba(234, 88, 12, 1) 20%, rgba(234, 88, 12, 0) 100%)",
