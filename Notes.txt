@@ -1,0 +1,8 @@
+Web profile ini menggunakan :
+
+* Vite JS
+* Tailwind CSS
+* Icon menggunakan remixicon.com
+* Animasi loading menggunakan flowbite.com
+* Animasi di hero menggunakan animate.style
+* Animasi saat scroll menggunakan AOS https://github.com/michalsnik/aos
