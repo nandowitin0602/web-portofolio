@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       {/* Hero */}
-      <div className="hero grid md:grid-cols-2 pt-10 items-center xl:gap-0 gap-6 grid-cols-1 md:h-[75vh] h-auto">
+      <div className="hero grid md:grid-cols-2 pt-10 items-center xl:gap-0 gap-6 grid-cols-1 md:min-h-[75vh] h-auto">
         <div className="flex flex-col md:items-start items-center animate__animated animate__fadeInUp animate__delay-3s">
           <div className={`flex items-center gap-3 mb-6 ${dark ? "bg-zinc-800" : "bg-zinc-300"} w-fit p-4 rounded-2xl transition-all duration-300 ease-in-out`}>
             <img src={DataImage.HeroImage} alt="Hero Image" className="w-10 rounded-md" loading="lazy"
