@@ -140,7 +140,7 @@ export const listProyek = [
     id: 1,
     gambar: Proyek1,
     nama: "Website ABCD",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
+    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
     tools: ["HTML", "CSS", "Javascript", "AOS"]
   },
   {

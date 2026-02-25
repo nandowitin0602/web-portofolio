@@ -106,21 +106,22 @@ function App() {
 
           {listProyek.map((proyek, index) => (
             <div key={proyek.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={(index + 1) * 100} data-aos-once="true">
-              <div className={`p-4 ${dark ? "bg-zinc-800" : "bg-zinc-200"} rounded-md flex flex-col transition-all duration-300 ease-in-out`}>
+              <div className={`p-4 ${dark ? "bg-zinc-800" : "bg-zinc-200"} rounded-md flex flex-col transition-all duration-300 ease-in-out h-full`}>
                 <img src={proyek.gambar} alt="Proyek Image" loading="lazy" />
                 <div className="flex-1 flex flex-col mt-4">
                   <h1 className="text-2xl font-bold my-4">{proyek.nama}</h1>
-                  <p className="text-base/loose mb-4">{proyek.desk}</p>
-                  <div className="my-auto">
-                    <div className="flex flex-wrap gap-2 mb-6">
-
-                      {proyek.tools.map((tool, index) => (
-                        <p key={index} className={`py-1 px-3 border border-zinc-500 bg-zinc-600 text-orange-50 rounded-md font-semibold transition-all duration-300 ease-in-out`}>{tool}</p>
-                      ))}
-
-                    </div>
-                  </div>
+                  <p className="text-base/loose">{proyek.desk}</p>
                   <div className="mt-auto text-center">
+                    <div className="my-auto">
+                      <div className="flex flex-wrap gap-2 mb-6 mt-6">
+
+                        {proyek.tools.map((tool, index) => (
+                          <p key={index} className={`py-1 px-3 border border-zinc-500 bg-zinc-600 text-orange-50 rounded-md font-semibold transition-all duration-300 ease-in-out`}>{tool}</p>
+                        ))}
+
+                      </div>
+                    </div>
+
                     <a href="#" className="bg-orange-600 p-3 rounded-lg block hover:bg-orange-700 hover:scale-102 transition-all duration-300 ease-in-out text-orange-50">Lihat Website</a>
                   </div>
                 </div>
