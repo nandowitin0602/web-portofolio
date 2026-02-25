@@ -40,30 +40,31 @@ function App() {
 
       {/* Tentang */}
       <div className="tentang mt-32 py-10" id="tentang">
-        <div className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 bg-zinc-800 rounded-lg"
-          data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-          <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md mb-10 sm:hidden block" loading="lazy"
-            style={{
-              background: "linear-gradient(to top, rgba(234, 88, 12, 1) 20%, rgba(234, 88, 12, 0) 100%)",
-            }} />
-          <p className="text-base/loose mb-10">Saya seorang Software Developer dengan pengalaman mengembangkan aplikasi web dan API untuk kebutuhan internal perusahaan. Fokus saya adalah menciptakan solusi yang efisien, scalable, dan mudah dipelihara. Berpengalaman dalam merancang alur sistem, menangani integrasi backend, serta memastikan keamanan dan performa aplikasi.</p>
-          <div className="flex items-center justify-between">
-            <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md sm:block hidden" loading="lazy"
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+          <div className={`xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 ${dark ? "bg-zinc-800" : "bg-zinc-200"} rounded-lg transition-all duration-300 ease-in-out`}>
+            <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md mb-10 sm:hidden block" loading="lazy"
               style={{
                 background: "linear-gradient(to top, rgba(234, 88, 12, 1) 20%, rgba(234, 88, 12, 0) 100%)",
               }} />
-            <div className="flex items-center gap-6">
-              <div>
-                <h1 className="text-4xl mb-1">
-                  0<span className="text-orange-600">+</span>
-                </h1>
-                <p>Proyek Selesai</p>
-              </div>
-              <div>
-                <h1 className="text-4xl mb-1">
-                  0<span className="text-orange-600">+</span>
-                </h1>
-                <p>Tahun Pengalaman</p>
+            <p className="text-base/loose mb-10">Saya seorang Software Developer dengan pengalaman mengembangkan aplikasi web dan API untuk kebutuhan internal perusahaan. Fokus saya adalah menciptakan solusi yang efisien, scalable, dan mudah dipelihara. Berpengalaman dalam merancang alur sistem, menangani integrasi backend, serta memastikan keamanan dan performa aplikasi.</p>
+            <div className="flex items-center justify-between">
+              <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md sm:block hidden" loading="lazy"
+                style={{
+                  background: "linear-gradient(to top, rgba(234, 88, 12, 1) 20%, rgba(234, 88, 12, 0) 100%)",
+                }} />
+              <div className="flex items-center gap-6">
+                <div>
+                  <h1 className="text-4xl mb-1">
+                    0<span className="text-orange-600">+</span>
+                  </h1>
+                  <p>Proyek Selesai</p>
+                </div>
+                <div>
+                  <h1 className="text-4xl mb-1">
+                    0<span className="text-orange-600">+</span>
+                  </h1>
+                  <p>Tahun Pengalaman</p>
+                </div>
               </div>
             </div>
           </div>
@@ -78,13 +79,14 @@ function App() {
           grid-cols-1 gap-4">
 
             {listTools.map((tools, index) => (
-              <div className="flex items-center gap-2 p-3 border border-zinc-600 rounded-md 
-              hover:bg-zinc-800 group" key={tools.id}
-                data-aos="fade-up" data-aos-duration="1000" data-aos-delay={(index + 1) * 100} data-aos-once="true">
-                <img src={tools.gambar} alt="Tools Image" className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900" loading="lazy" />
-                <div>
-                  <h4 className="font-bold">{tools.nama}</h4>
-                  <p className="opacity-50">{tools.ket}</p>
+              <div key={tools.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={(index + 1) * 100} data-aos-once="true">
+                <div className={`flex items-center gap-2 p-3 border ${dark ? "border-zinc-600" : "border-zinc-300"} rounded-md h-full
+                ${dark ? "hover:bg-zinc-800" : "hover:bg-zinc-200"} transition-all duration-200 ease-in-out group`}>
+                  <img src={tools.gambar} alt="Tools Image" className={`w-14 ${dark ? "bg-zinc-800 group-hover:bg-zinc-900" : "bg-zinc-100 group-hover:bg-zinc-200"} p-1 transition-all duration-300 ease-in-out rounded-md`} loading="lazy" />
+                  <div>
+                    <h4 className="font-bold">{tools.nama}</h4>
+                    <p className="opacity-50">{tools.ket}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -103,24 +105,24 @@ function App() {
         <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
 
           {listProyek.map((proyek, index) => (
-            <div key={proyek.id} className="p-4 bg-zinc-800 rounded-md flex flex-col"
-              data-aos="fade-up" data-aos-duration="1000" data-aos-delay={(index + 1) * 100} data-aos-once="true">
-              <img src={proyek.gambar} alt="Proyek Image" loading="lazy" />
-              <div className="flex-1 flex flex-col mt-4">
-                <h1 className="text-2xl font-bold my-4">{proyek.nama}</h1>
-                <p className="text-base/loose mb-4">{proyek.desk}</p>
-                <div className="my-auto">
-                  <div className="flex flex-wrap gap-2 mb-6">
+            <div key={proyek.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={(index + 1) * 100} data-aos-once="true">
+              <div className={`p-4 ${dark ? "bg-zinc-800" : "bg-zinc-200"} rounded-md flex flex-col transition-all duration-300 ease-in-out`}>
+                <img src={proyek.gambar} alt="Proyek Image" loading="lazy" />
+                <div className="flex-1 flex flex-col mt-4">
+                  <h1 className="text-2xl font-bold my-4">{proyek.nama}</h1>
+                  <p className="text-base/loose mb-4">{proyek.desk}</p>
+                  <div className="my-auto">
+                    <div className="flex flex-wrap gap-2 mb-6">
 
-                    {proyek.tools.map((tool, index) => (
-                      <p className="py-1 px-3 border border-zinc-500 rounded-md font-semibold
-                    bg-zinc-600" key={index}>{tool}</p>
-                    ))}
+                      {proyek.tools.map((tool, index) => (
+                        <p key={index} className={`py-1 px-3 border border-zinc-500 bg-zinc-600 text-orange-50 rounded-md font-semibold transition-all duration-300 ease-in-out`}>{tool}</p>
+                      ))}
 
+                    </div>
                   </div>
-                </div>
-                <div className="mt-auto text-center">
-                  <a href="#" className="bg-orange-600 p-3 rounded-lg block hover:bg-orange-700 hover:scale-102 transition-all duration-300 ease-in-out">Lihat Website</a>
+                  <div className="mt-auto text-center">
+                    <a href="#" className="bg-orange-600 p-3 rounded-lg block hover:bg-orange-700 hover:scale-102 transition-all duration-300 ease-in-out text-orange-50">Lihat Website</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -136,32 +138,33 @@ function App() {
           data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Kontak</h1>
         <p className="text-center text-base/loose opacity-50 mb-10"
           data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Mari terhubung dengan saya.</p>
-        {/* <form action="https://formsubmit.co/your@email.com" method="POST"  */}
-        <form action="#"
-          className="bg-zinc-800 p-10 sm:w-fit w-full mx-auto rounded-md" autoComplete="off"
-          data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true">
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <label className="font-semibold">Nama Lengkap</label>
-              <input type="text" name="nama" placeholder="Masukan Nama..." required
-                className="border border-zinc-500 p-2 rounded-md" />
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true">
+          {/* <form action="https://formsubmit.co/your@email.com" method="POST"  */}
+          <form action="#"
+            className={`${dark ? "bg-zinc-800" : "bg-zinc-200"} p-10 sm:w-fit w-full mx-auto rounded-md transition-all duration-300 ease-in-out`} autoComplete="off">
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-2">
+                <label className="font-semibold">Nama Lengkap</label>
+                <input type="text" name="nama" placeholder="Masukan Nama..." required
+                  className={`border border-zinc-500/50 p-2 rounded-md text-zinc-500`} />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="font-semibold">Email</label>
+                <input type="email" name="email" placeholder="Masukan Email..." required
+                  className="border border-zinc-500/50 p-2 rounded-md text-zinc-500" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="pesan" className="font-semibold">Pesan</label>
+                <textarea name="pesan" id="pesan" cols="45" rows="7" placeholder="Pesan..." required
+                  className="border border-zinc-500/50 p-2 rounded-md text-zinc-500"></textarea>
+              </div>
+              <div className="text-center">
+                <button type="submit" className="bg-orange-600 p-3 rounded-lg w-full cursor-pointer 
+             hover:bg-orange-700 hover:scale-102 transition-all duration-300 ease-in-out text-orange-50">Kirim Pesan</button>
+              </div>
             </div>
-            <div className="flex flex-col gap-2">
-              <label className="font-semibold">Email</label>
-              <input type="email" name="email" placeholder="Masukan Email..." required
-                className="border border-zinc-500 p-2 rounded-md" />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="pesan" className="font-semibold">Pesan</label>
-              <textarea name="pesan" id="pesan" cols="45" rows="7" placeholder="Pesan..." required
-                className="border border-zinc-500 p-2 rounded-md"></textarea>
-            </div>
-            <div className="text-center">
-              <button type="submit" className="bg-orange-600 p-3 rounded-lg w-full cursor-pointer 
-             hover:bg-orange-700 hover:scale-102 transition-all duration-300 ease-in-out">Kirim Pesan</button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
       {/* Kontak */}
     </>
